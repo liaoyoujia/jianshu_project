@@ -1,0 +1,7 @@
+export const HAND_INPUT_BLUR='HAND_INPUT_BLUR'
+export const HAND_INPUT_FOCUS='HAND_INPUT_FOCUS'
+export const INIT_PAGE='INIT_PAGE'
+export const GET_LIST_DATA='GET_LIST_DATA'
+export const CHANGE_SHOW='CHANGE_SHOW'
+export const CHANGE_FALSES='CHANGE_FALSES'
+
