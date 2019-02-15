@@ -1,4 +1,4 @@
-import {HAND_INPUT_BLUR,HAND_INPUT_FOCUS,GET_LIST_DATA,INIT_PAGE,CHANGE_SHOW,CHANGE_FALSES}from './constants'
+import {HAND_INPUT_BLUR,HAND_INPUT_FOCUS,GET_LIST_DATA,INIT_PAGE,CHANGE_SHOW,CHANGE_FALSES,CHANGE_LOGINS}from './constants'
 
 const defaultState={
     isLong:false,
@@ -37,6 +37,7 @@ export default (state=defaultState,action)=>{
         return newState
 
     }
+    
     
    return state
 }

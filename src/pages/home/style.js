@@ -52,7 +52,7 @@ img{
     width:100%;
 }
 `
-export const TopicTitle=styled.a`
+export const TopicTitle=styled.div`
 display:inline-block;
 font-size:18px;
 font-weight:700;

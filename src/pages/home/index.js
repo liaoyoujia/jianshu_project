@@ -8,36 +8,8 @@ class Home extends Component{
     super(props);
     this.state = {isScroll:false};
   }
-  handTop(){
-    window.scrollTo(0,0)
-  }
-    scrollTop(){
-      window.addEventListener('scroll',()=>{
-        if(document.documentElement.scrollTop>200){
-          this.setState({
-            isScroll:true
-          })}else{
-          this.setState({
-            isScroll:false
-          })
-          }
-        })
-    }
-    componentDidMount(){
-      this.scrollTop()
-    }
-    componentWillUnmount(){
-      window.removeEventListener('scroll',()=>{
-        if(document.documentElement.scrollTop>200){
-          this.setState({
-            isScroll:true
-          })}else{
-          this.setState({
-            isScroll:false
-          })
-          }
-        })
-    }
+ 
+    
     render(){
         return <HomeWrap>
               <HomeLeft>

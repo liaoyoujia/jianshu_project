@@ -91,7 +91,7 @@ transition:all .4s ease-in;
    
 }
 `;
-export const Login = styled.a `
+export const Login = styled.div`
 cursor: pointer;
 float:right;
 margin:0 38px;

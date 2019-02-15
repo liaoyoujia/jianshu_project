@@ -6,7 +6,7 @@ class Recommend extends Component{
         const {recommentData}=this.props
         
         return <RecommendWrap>
-            {recommentData.map((item)=>{return <RecImgBox key={item.id}><img src={item.imgUrl}/></RecImgBox>})}
+            {recommentData.map((item)=>{return <RecImgBox key={item.id}></RecImgBox>})}
             
 
         </RecommendWrap>

@@ -1,8 +1,10 @@
 import  React ,{ Component } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 import {HeaderWrapper,DropBoxBody,DropItem,Logo,Nav,Input,Login,Reg,Article,DropBox,DropBoxTop} from './style'
-import{searchFocus,searchBlur,getListData,initPages,changeShows,changeFalses} from './store/actionCreator'
+import{searchFocus,searchBlur,getListData,initPages,changeShows,changeFalses,changeLogins} from './store/actionCreator'
+import {turnLogins} from '../../pages/login/store/actionCreator'
 
 
 class Header extends Component{
@@ -29,7 +31,7 @@ class Header extends Component{
     };
     render(){
     
-        const {isLong ,handInputBlur,handInputFocus,listData}=this.props
+        const {isLong ,handInputBlur,handInputFocus,listData,isLogin,changeLogin}=this.props
 
         return <HeaderWrapper>
             <Logo/>
@@ -47,8 +49,9 @@ class Header extends Component{
                
                 <i className={isLong?'iconfont left circle':'iconfont left'}>&#xe69e;</i>
                 </div>
-               
-                <Login>登录</Login>
+               {
+                isLogin?<Login onClick={changeLogin}>退出</Login>:<Link to={'/login'}><Login>登录</Login></Link>
+               }
                 <i className="iconfont right">&#xe607;</i>
             </Nav>
             <div className="headerRight">
@@ -72,7 +75,8 @@ const mapState=(state)=>{
         listData:state.header.listData,
         isShow:state.header.isShow,
         page:state.header.page,
-        totalPage:state.header.totalPage
+        totalPage:state.header.totalPage,
+        isLogin:state.login.isLogin
     }
 
 }
@@ -92,6 +96,9 @@ const mapActions=(dispatch)=>{
         changeFalse(){
             dispatch(changeFalses())
 
+        },
+        changeLogin(){
+            dispatch(turnLogins())
         },
 
         initPage(page,totalPage){

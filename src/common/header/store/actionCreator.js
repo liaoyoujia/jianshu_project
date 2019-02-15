@@ -4,7 +4,7 @@ import {
     GET_LIST_DATA,
     INIT_PAGE,
     CHANGE_SHOW,
-    CHANGE_FALSES
+    CHANGE_FALSES,
 } from './constants'
 import axios from 'axios'
 const getData = (data) => ({
@@ -28,6 +28,7 @@ export const initPages=(data)=>({
     type:INIT_PAGE,
     value:data
 })
+
 export const changeShows=()=>({
     type:CHANGE_SHOW
 })

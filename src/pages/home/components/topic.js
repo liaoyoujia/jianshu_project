@@ -1,6 +1,7 @@
 import React ,{Component}from 'react';
 import {TopicBox,TopicItem,TopicItemLeft,TopicItemRight,TopicTitle,TopicBody,LoaderMore} from '../style'
 import {connect} from 'react-redux'
+import {Link}from 'react-router-dom'
 import {getHomeDatas,getMoreLists} from '../store/actionCreator'
 class Topic extends Component{
     render(){
@@ -9,16 +10,21 @@ class Topic extends Component{
         return<div> 
         <TopicBox>{
             homeList&&homeList.map((item,index)=>{
-                return <TopicItem key={index}>
+                return (
+                <Link key={index} to={'/detail/'+item.id}> 
+                <TopicItem >
                 <TopicItemLeft>
                 <TopicTitle>{item.title}</TopicTitle>
                 <TopicBody>{item.desc}</TopicBody>
                 </TopicItemLeft>
                 <TopicItemRight>
-                    <img src={item.imgUrl}></img>
+                    <img src={item.imgUrl} alt=''></img>
                 </TopicItemRight>
 
-            </TopicItem> 
+                </TopicItem> 
+                 </Link>   
+
+                )
             })
         }
         </TopicBox>

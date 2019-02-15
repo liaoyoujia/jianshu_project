@@ -1,0 +1,3 @@
+export const CHANGE_LOGIN='GET_DETAIL_DATA'
+export const CHANGE_LOGINS='CHANGE_LOGINS'
+
