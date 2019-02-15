@@ -29,7 +29,7 @@ class Header extends Component{
     };
     render(){
     
-        const {isLong ,handInputBlur,handInputFocus}=this.props
+        const {isLong ,handInputBlur,handInputFocus,listData}=this.props
 
         return <HeaderWrapper>
             <Logo/>
@@ -42,7 +42,7 @@ class Header extends Component{
                     timeout={300}
                     classNames="star"
                   >
-                <Input onFocus={handInputFocus} onBlur={handInputBlur}/>
+                <Input onFocus={()=>{handInputFocus(listData)}} onBlur={handInputBlur}/>
                 </CSSTransition>
                
                 <i className={isLong?'iconfont left circle':'iconfont left'}>&#xe69e;</i>
@@ -81,8 +81,8 @@ const mapActions=(dispatch)=>{
         handInputBlur(){
             dispatch(searchBlur())
         },
-        handInputFocus(){
-            dispatch(getListData())
+        handInputFocus(listData){
+            !listData.length&&dispatch(getListData())
             dispatch(searchFocus())
         },
         changeShow(){
